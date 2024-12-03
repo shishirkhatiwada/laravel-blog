@@ -1,13 +1,14 @@
+import PropTypes from 'prop-types';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 
-interface EditorProps {
-    content: string;
-    onChange: (content: string) => void;
-}
-
-export default function Editor({ content, onChange }: EditorProps) {
+/**
+ * @param {Object} props
+ * @param {string} props.content
+ * @param {function} props.onChange
+ */
+export default function Editor({ content, onChange }) {
     const editor = useEditor({
         extensions: [
             StarterKit,
@@ -48,4 +49,9 @@ export default function Editor({ content, onChange }: EditorProps) {
             </div>
         </div>
     );
-} 
+}
+
+Editor.propTypes = {
+    content: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
+}; 
