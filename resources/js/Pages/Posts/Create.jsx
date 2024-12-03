@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { Head, useForm } from '@inertiajs/react';
-import RichTextEditor from '@/Components/RichTextEditor';
+import RichTextEditor from '@/Components/Editor/RichTextEditor';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 export default function Create({ auth }) {

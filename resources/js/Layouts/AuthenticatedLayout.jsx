@@ -1,38 +1,57 @@
 import { Link, useForm } from '@inertiajs/react';
-import { Toaster } from 'react-hot-toast';
 
 export default function AuthenticatedLayout({ auth, header, children }) {
     const { post } = useForm();
 
     const handleLogout = (e) => {
         e.preventDefault();
-        post(route('logout'));
+        post(route('logout'), {
+            onSuccess: () => {
+                window.location.href = '/';
+            },
+        });
     };
 
     return (
         <div className="min-h-screen bg-white">
-            <Toaster position="top-right" />
             <nav className="bg-gray-800 p-4 fixed w-full z-10 top-0">
                 <div className="container mx-auto flex justify-between">
                     <div className="flex space-x-4">
                         <Link href="/" className="text-white hover:text-gray-300">
                             Home
                         </Link>
-                        <Link href={route('dashboard')} className="text-white hover:text-gray-300">
-                            Dashboard
-                        </Link>
-                        <Link href={route('posts.create')} className="text-white hover:text-gray-300">
-                            Create
-                        </Link>
+                        {auth?.user && (
+                            <>
+                                <Link href={route('dashboard')} className="text-white hover:text-gray-300">
+                                    Dashboard
+                                </Link>
+                                <Link href={route('posts.create')} className="text-white hover:text-gray-300">
+                                    Create
+                                </Link>
+                            </>
+                        )}
                     </div>
                     <div className="flex items-center space-x-4">
-                        <span className="text-white">{auth.user.name}</span>
-                        <button
-                            onClick={handleLogout}
-                            className="text-white hover:text-gray-300"
-                        >
-                            Logout
-                        </button>
+                        {auth?.user ? (
+                            <>
+                                <span className="text-white">{auth.user.name}</span>
+                                <button
+                                    onClick={handleLogout}
+                                    className="text-white hover:text-gray-300"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link href={route('login')} className="text-white hover:text-gray-300">
+                                    Login
+                                </Link>
+                                <Link href={route('register')} className="text-white hover:text-gray-300">
+                                    Register
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
             </nav>
