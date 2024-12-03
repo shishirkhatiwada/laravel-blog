@@ -159,5 +159,4 @@ laravel-blog/
 
 - Laravel Documentation
 - Inertia.js Documentation
-- TinyMCE Documentation
-- Tailwind CSS Documentation
+- - Tailwind CSS Documentation
