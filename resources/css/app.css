@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add styles for rich text content */
+.prose {
+    max-width: 65ch;
+    @apply text-gray-900;
+}
+
+.prose img {
+    @apply my-2 rounded-lg;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply font-bold my-4;
+}
+
+.prose ul, .prose ol {
+    @apply my-4 ml-4;
+}
+
+.prose li {
+    @apply my-2;
+}
