@@ -1,71 +1,177 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+```markdown:README.md
+# Laravel Blog Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured blogging platform built with Laravel and Inertia.js, featuring user authentication, post creation with rich text editing, comments, likes, and real-time notifications.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **User Authentication**
+  - Register, Login, Logout functionality
+  - Protected routes for authenticated users
+  - User profile display
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Post Management**
+  - Create, read, update, and delete posts
+  - Rich text editing with TinyMCE
+  - Post author attribution
+  - Responsive post layout
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Interactive Features**
+  - Like/unlike posts
+  - Comment on posts
+  - Real-time like and comment counts
+  - Toast notifications for user actions
 
-## Learning Laravel
+- **Email Notifications**
+  - Automated emails for new likes
+  - Automated emails for new comments
+  - Mailtrap integration for testing
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend**
+  - Laravel 9.x
+  - MySQL Database
+  - Laravel Events & Listeners
+  - Mailtrap for email testing
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Frontend**
+  - React.js
+  - Inertia.js for SPA-like performance
+  - TinyMCE for rich text editing
+  - React Hot Toast for notifications
+  - Tailwind CSS for styling
 
-## Laravel Sponsors
+## 📦 Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Prerequisites
+- PHP >= 8.0
+- Composer
+- Node.js & NPM
+- MySQL
+- Git
 
-### Premium Partners
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/shishirkhatiwada/laravel-blog.git
+cd laravel-blog
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Step 2: Install Dependencies
+```bash
+# Install PHP dependencies
+composer install
 
-## Contributing
+# Install NPM packages
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Step 3: Environment Setup
+```bash
+# Create environment file
+cp .env.example .env
 
-## Code of Conduct
+# Generate application key
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Step 4: Configure Environment Variables
+Update your `.env` file with your database and Mailtrap credentials:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
 
-## Security Vulnerabilities
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=your_mailtrap_username
+MAIL_PASSWORD=your_mailtrap_password
+MAIL_ENCRYPTION=tls
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Step 5: Database Setup
+```bash
+# Run database migrations
+php artisan migrate
+```
 
-## License
+### Step 6: Start Development Servers
+```bash
+# Start the Vite development server
+npm run dev
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# laravel-blog
-test
->>>>>>> 5d133050fc1fbae6381bca36e6c39f4379ad4330
+# In a separate terminal, start the Laravel development server
+php artisan serve
+```
+
+Visit `http://localhost:8000` in your browser.
+
+## 🎯 Usage
+
+1. **Registration/Login**
+   - Visit the homepage
+   - Click Register/Login
+   - Fill in the required information
+
+2. **Creating a Post**
+   - Click "Create" in the navigation bar
+   - Enter post title
+   - Use the rich text editor for content
+   - Submit the post
+
+3. **Interacting with Posts**
+   - Like/unlike posts by clicking the like button
+   - Comment on posts using the comment form
+   - View notifications for interactions
+   - Check email notifications in Mailtrap
+
+## 📁 Project Structure
+
+```
+laravel-blog/
+├── app/
+│   ├── Http/Controllers/    # Controllers
+│   ├── Models/             # Eloquent models
+│   ├── Events/            # Event classes
+│   └── Listeners/         # Event listeners
+├── resources/
+│   ├── js/               # React components
+│   │   ├── Components/   # Reusable components
+│   │   ├── Layouts/     # Layout components
+│   │   └── Pages/       # Page components
+│   └── views/           # Blade templates
+└── routes/
+    ├── web.php          # Web routes
+    └── api.php          # API routes
+```
+
+## 🔧 Key Components
+
+- **AuthenticatedLayout.jsx**: Main layout with navigation
+- **RichTextEditor.jsx**: TinyMCE integration
+- **PostController.php**: Post management logic
+- **EventServiceProvider.php**: Event-listener bindings
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## 🙏 Acknowledgments
+
+- Laravel Documentation
+- Inertia.js Documentation
+- TinyMCE Documentation
+- Tailwind CSS Documentation
+```
+
+
+
