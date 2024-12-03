@@ -1,11 +1,3 @@
-
-
-
-
-
-
-Here's a comprehensive README.md file for your project:
-
 ```markdown:README.md
 # Laravel Blog Application
 
@@ -172,14 +164,6 @@ laravel-blog/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## 👨‍💻 Author
-
-**Shishir Khatiwada**
-- GitHub: [@shishirkhatiwada](https://github.com/shishirkhatiwada)
 
 ## 🙏 Acknowledgments
 
